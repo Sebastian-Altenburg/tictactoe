@@ -4,6 +4,12 @@ let setup = (()=>{
     let body = document.querySelector("body");
     let restartGame = document.querySelector(".restartGame");
     let restartButton = document.querySelector("#restartButton");
+
+    restartButton.addEventListener("click", ()=> {
+        location.reload();
+    });
+
+    
 //
     let myCanvas = document.createElement("canvas");
     myCanvas.setAttribute("tabindex","1");
@@ -19,7 +25,7 @@ let setup = (()=>{
         ["","",""]
     ];
     
-    return {ctx, myCanvas, gameBoard};
+    return {ctx, myCanvas, gameBoard, restartButton, restartGame};
 })();
 
 /////////// Players
@@ -44,6 +50,8 @@ let players = (score, turn)=>{
                 }
             }
         }
+        swapTurns();
+        gameLogic();
     }
     
     return{turn, score, setMarker};
@@ -107,3 +115,40 @@ else if(playerX.turn == false){
     
 }, false);
 ////////////////////////
+function swapTurns(){
+    if (playerX.turn == true)            {playerX.turn = false;}
+    else if (playerX.turn == false)      {playerX.turn = true};
+}
+///////////////////////
+function gameLogic(){
+    if ((setup.gameBoard[0][0] == "X" && setup.gameBoard[0][1] == "X" && setup.gameBoard[0][2] == "X")    || 
+        (setup.gameBoard[1][0] == "X" && setup.gameBoard[1][1] == "X" && setup.gameBoard[1][2] == "X")    ||
+        (setup.gameBoard[2][0] == "X" && setup.gameBoard[2][1] == "X" && setup.gameBoard[2][2] == "X")    ||
+        (setup.gameBoard[0][0] == "X" && setup.gameBoard[1][0] == "X" && setup.gameBoard[2][0] == "X")    ||
+        (setup.gameBoard[0][1] == "X" && setup.gameBoard[1][1] == "X" && setup.gameBoard[2][1] == "X")    ||
+        (setup.gameBoard[0][2] == "X" && setup.gameBoard[1][2] == "X" && setup.gameBoard[2][2] == "X")    ||
+        (setup.gameBoard[0][0] == "X" && setup.gameBoard[1][1] == "X" && setup.gameBoard[2][2] == "X")    ||
+        (setup.gameBoard[0][2] == "X" && setup.gameBoard[1][1] == "X" && setup.gameBoard[2][0] == "X")) {
+
+            console.log("Player X wins!");
+            setup.myCanvas.classList.add("hide");
+            setup.restartGame.classList.remove("hide");
+            setup.restartGame.classList.add("showDiv");
+            setup.restartButton.classList.remove("hide");
+    }
+    else if (   (setup.gameBoard[0][0] == "O" && setup.gameBoard[0][1] == "O" && setup.gameBoard[0][2] == "O")    || 
+                (setup.gameBoard[1][0] == "O" && setup.gameBoard[1][1] == "O" && setup.gameBoard[1][2] == "O")    ||
+                (setup.gameBoard[2][0] == "O" && setup.gameBoard[2][1] == "O" && setup.gameBoard[2][2] == "O")    ||
+                (setup.gameBoard[0][0] == "O" && setup.gameBoard[1][0] == "O" && setup.gameBoard[2][0] == "O")    ||
+                (setup.gameBoard[0][1] == "O" && setup.gameBoard[1][1] == "O" && setup.gameBoard[2][1] == "O")    ||
+                (setup.gameBoard[0][2] == "O" && setup.gameBoard[1][2] == "O" && setup.gameBoard[2][2] == "O")    ||
+                (setup.gameBoard[0][0] == "O" && setup.gameBoard[1][1] == "O" && setup.gameBoard[2][2] == "O")    ||
+                (setup.gameBoard[0][2] == "O" && setup.gameBoard[1][1] == "O" && setup.gameBoard[2][0] == "O")) {
+        
+                    console.log("Player O wins!");
+                    setup.myCanvas.classList.add("hide");
+                    setup.restartGame.classList.remove("hide");
+                    setup.restartGame.classList.add("showDiv");
+                    setup.restartButton.classList.remove("hide");
+    }   
+}

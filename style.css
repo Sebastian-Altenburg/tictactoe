@@ -8,3 +8,20 @@ canvas{
     margin: auto;
     border: none;
 }
+
+#restartButton{
+    background-color: aquamarine; 
+    height: 50px;
+    width: 100px; 
+}
+.showDiv{
+    background-color: rgb(29, 67, 102);
+    height: 30px;
+    width: 80px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hide{
+    display: none;
+} 
