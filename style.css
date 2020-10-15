@@ -8,18 +8,43 @@ canvas{
     margin: auto;
     border: none;
 }
+/* .bigCanvas {
+    background-color: rgb(55, 74, 109);
+} */
 
 #restartButton{
     background-color: aquamarine; 
     height: 50px;
     width: 100px; 
+    margin: 0 auto;
+    
 }
 .showDiv{
     background-color: rgb(29, 67, 102);
-    height: 30px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
     margin: 0 auto;
     text-align: center;
+    
+}
+
+#score {
+    background-color: cadetblue;
+    height: 80px;
+    width: 150px;
+    margin-top: 300px;
+    margin-left: 150px;
+    text-align: center;
+    font-size: 50px;
+}
+#score2 {
+    background-color: cadetblue;
+    height: 80px;
+    width: 150px;
+    
+    margin-left: 1250px;
+    text-align: center;
+    font-size: 50px;
 }
 
 .hide{
