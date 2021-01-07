@@ -1,0 +1,68 @@
+html, body { 
+    height: 100%;
+    background: linear-gradient(180deg, #e6cfdd 50%, #fff);
+}
+canvas{
+    background-color:#AACC8F;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 15px;
+    margin-bottom: 8px;
+}
+.container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 600px;
+    height: 100vh;
+}
+.score-wrapper {
+    margin: 10px;
+}
+.score-wrapper h3 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+.div-x {
+    background-color: #5e877c;
+    text-align: center;
+    height: 70px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(53, 53, 53);
+}
+.div-o {
+    background-color: #cca08f;
+    text-align: center;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid rgb(53, 53, 53);
+}
+.scoreX, .scoreO {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.restartDiv {
+    width: 100%;
+}
+.restartButton{
+    display: block;
+    height: 70px;
+    width: 100%; 
+    margin: 0 auto;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: #cfe6df;
+    box-shadow: 5px 5px 10px #888888;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 15px;
+}
+
+.restartButton span {
+    font-size: 1.5em;
+}
