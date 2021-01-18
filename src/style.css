@@ -1,9 +1,11 @@
-html, body { 
+html,
+body {
     height: 100%;
     background: linear-gradient(180deg, #e6cfdd 50%, #fff);
+    margin: 0;
 }
-canvas{
-    background-color:#AACC8F;
+canvas {
+    background-color: #aacc8f;
     border: 1px solid rgb(53, 53, 53);
     border-radius: 15px;
     margin-bottom: 8px;
@@ -41,7 +43,8 @@ canvas{
     border-radius: 15px;
     border: 1px solid rgb(53, 53, 53);
 }
-.scoreX, .scoreO {
+.scoreX,
+.scoreO {
     font-size: 1.8em;
     font-weight: 600;
     margin: 0;
@@ -50,10 +53,10 @@ canvas{
 .restartDiv {
     width: 100%;
 }
-.restartButton{
+.restartButton {
     display: block;
     height: 70px;
-    width: 100%; 
+    width: 100%;
     margin: 0 auto;
     font-size: 1.2em;
     font-weight: 600;
